@@ -1,0 +1,72 @@
+@import url('../../styles/variable.less');
+@import url('../../styles/mixin.less');
+
+.@{default-prefix}-btn {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  color: @black-color;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
+
+  &-default {
+    .bg-and-border(@white-color, @gray-d9-color);
+
+    &:hover {
+      border: 1px solid @main-color;
+      color: @main-color;
+    }
+  }
+
+  &-dashed {
+    .bg-and-border(@white-color, @gray-d9-color);
+
+    border: 1px dashed @gray-d9-color;
+
+    &:hover {
+      border: 1px dashed @main-color;
+      color: @main-color;
+    }
+  }
+
+  &-primary {
+    .bg-and-border(@main-color, @main-color);
+
+    color: @white-color;
+
+    &:hover {
+      .bg-and-border(@main-hover-color, @main-hover-color);
+    }
+  }
+
+  &-large {
+    font-size: 16px;
+    height: 40px;
+    padding: 6.29px 15px;
+    border-radius: 8px;
+  }
+
+  &-small {
+    font-size: 14px;
+    height: 24px;
+    padding: 0 7px;
+    border-radius: 4px;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: #d9d9d9;
+    color: rgba(0, 0, 0, 25%);
+    background-color: rgba(0, 0, 0, 4%);
+    box-shadow: none;
+  }
+}
