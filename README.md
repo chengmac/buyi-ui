@@ -5,6 +5,10 @@
 
 A react library developed with dumi
 
+## online document
+
+[document](https://chengmac.github.io/buyi-ui)
+
 ## Usage
 
 TODO

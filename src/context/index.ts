@@ -4,7 +4,7 @@ export interface ContextProps {
   getPrefixCls: (suffixCls?: string, customizePrefixCls?: string) => string;
 }
 
-const defaultPrefixCls = (suffixCls, customizePrefixCls) => {
+const defaultPrefixCls = (suffixCls?: string, customizePrefixCls?: string) => {
   if (customizePrefixCls) return customizePrefixCls;
   return suffixCls ? `buyi-${suffixCls}` : 'buyi';
 };

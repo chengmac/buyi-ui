@@ -1,12 +1,13 @@
 import { defineConfig } from 'dumi';
 
 export default defineConfig({
-  outputPath: 'docs-dist',
+  title: 'buyi-ui',
+  outputPath: 'dist',
   resolve: {
-    atomDirs: [{ type: 'component', dir: 'components' }],
+    atomDirs: [{ type: 'component', dir: 'src/components' }],
     codeBlockMode: 'passive',
   },
   themeConfig: {
-    name: 'buyi-ui',
+    name: 'buyi',
   },
 });

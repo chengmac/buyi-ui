@@ -1,5 +1,46 @@
-@import url('../styles/variable.less');
+@import url('../../styles/variable.less');
 
 .@{default-prefix}-space {
   display: inline-flex;
+  gap: @base-gap;
+
+  &-vertical {
+    flex-direction: column;
+  }
+
+  &-horizontal {
+    flex-direction: row;
+  }
+
+  &-align-start {
+    align-items: start;
+  }
+
+  &-align-end {
+    align-items: end;
+  }
+
+  &-align-baseline {
+    align-items: baseline;
+  }
+
+  &-align-center {
+    align-items: center;
+  }
+
+  &-wrap {
+    flex-wrap: wrap;
+  }
+
+  &-small {
+    gap: @base-gap;
+  }
+
+  &-middle {
+    gap: @base-gap * 2;
+  }
+
+  &-large {
+    gap: @base-gap * 3;
+  }
 }
