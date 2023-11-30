@@ -1,0 +1,133 @@
+@import url('../../styles/variable.less');
+@import url('../../styles/mixin.less');
+
+.@{default-prefix}-btn {
+  outline: none;
+  position: relative;
+  display: inline-block;
+  font-weight: 400;
+  white-space: nowrap;
+  text-align: center;
+  background-image: none;
+  cursor: pointer;
+  transition: all 0.3s;
+  user-select: none;
+  touch-action: manipulation;
+  color: @black-color;
+  height: 32px;
+  padding: 4px 15px;
+  border-radius: 6px;
+
+  &-default {
+    .bg-and-border(@white-color, @gray-d9-color);
+
+    &:hover {
+      border: 1px solid @main-color;
+      color: @main-color;
+    }
+  }
+
+  &-dashed {
+    .bg-and-border(@white-color, @gray-d9-color);
+
+    border: 1px dashed @gray-d9-color;
+
+    &:hover {
+      border: 1px dashed @main-color;
+      color: @main-color;
+    }
+  }
+
+  &-primary {
+    .bg-and-border(@main-color, @main-color);
+
+    color: @white-color;
+
+    &:hover {
+      .bg-and-border(@main-hover-color, @main-hover-color);
+    }
+  }
+
+  &-link {
+    color: @main-color;
+    background-color: @white-color;
+    border: none;
+
+    &:hover {
+      color: @main-hover-color;
+    }
+
+    &:disabled {
+      background-color: @white-color !important;
+    }
+
+    a {
+      border: none;
+      color: inherit;
+      cursor: pointer;
+      font-family: inherit;
+      font-size: inherit;
+      margin: inherit;
+      padding: inherit;
+      text-decoration: inherit;
+      user-select: none;
+      user-select: none;
+      user-select: none;
+      user-select: none;
+    }
+  }
+
+  &-icon {
+    &-loading {
+      display: inline-block;
+      animation: loading 1s infinite linear;
+    }
+    .@{default-prefix}-btn-icon-container {
+      padding-right: calc(@base-gap / 2);
+    }
+  }
+
+  &-icon-only {
+    padding: 0 7px;
+
+    &-loading {
+      display: inline-block;
+      animation: loading 1s infinite linear;
+    }
+  }
+
+  &-large {
+    font-size: calc(@base-gap * 2);
+    height: 40px;
+    padding: 6px 15px;
+    border-radius: @base-gap;
+  }
+
+  &-middle {
+    font-size: 14px;
+    height: 32px;
+    padding: 0 7px;
+    border-radius: 6px;
+  }
+
+  &-small {
+    font-size: 14px;
+    height: 24px;
+    padding: 0 7px;
+    border-radius: @base-gap / 2;
+  }
+
+  &:disabled {
+    cursor: not-allowed;
+    border-color: @disabled-color;
+    color: rgba(0, 0, 0, 25%);
+    background-color: rgba(0, 0, 0, 4%);
+    box-shadow: none;
+  }
+}
+@keyframes loading {
+  100% {
+    transform: rotate(360deg);
+    transform: rotate(360deg);
+  }
+}
