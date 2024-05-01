@@ -1,7 +1,9 @@
 ---
 nav: 组件
 
-title: Button
+title: Button 按钮
+group: 常用
+groupOrder: 1
 keywords: [button]
 demo:
   cols: 2

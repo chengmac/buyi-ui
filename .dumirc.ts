@@ -7,6 +7,9 @@ export default defineConfig({
     atomDirs: [{ type: 'component', dir: 'src/components' }],
     codeBlockMode: 'passive',
   },
+  alias: {
+    '~': '/src',
+  },
   themeConfig: {
     name: 'buyi',
   },

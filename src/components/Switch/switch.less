@@ -1,0 +1,115 @@
+@import url('../../styles/variable.less');
+
+.@{default-prefix}-switch {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  font-size: 14px;
+  line-height: 22px;
+  list-style: none;
+  position: relative;
+  display: inline-block;
+  min-width: @base-size * 11;
+  height: @base-size * 5.5;
+  vertical-align: middle;
+  border: 0;
+  border-radius: 100px;
+  cursor: pointer;
+  transition: all 0.2s;
+  user-select: none;
+  background-color: @gray-d9-color;
+
+  &-checked {
+    background: @main-color;
+  }
+
+  & [class^="buyi-switch"] {
+    box-sizing: border-box;
+  }
+
+  &-checked &-handle{
+    inset-inline-start: calc(100% - 20px);
+  }
+
+  &-checked &-inner{
+    padding-inline-start: 9px;
+    padding-inline-end: 24px;
+    
+    &-checked {
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+    }
+
+    &-unChecked {
+      margin-inline-start: calc(-100% + calc(18px + 2px * 2) - calc(24px * 2));
+      margin-inline-end: calc(100% - calc(18px + 2px* 2) + calc(24px * 2));
+    }
+  }
+
+  &-handle{
+    position: absolute;
+    top: 2px;
+    inset-inline-start: 2px;
+    width: @base-size * 4.5;
+    height: @base-size * 4.5;
+    transition: all 0.2s ease-in-out;
+  }
+
+  &-disabled {
+    background: @disabled-color;
+    cursor: not-allowed;
+  }
+
+  &-handle::before {
+    position: absolute;
+    inset-inline-end: 0;
+    bottom: 0;
+    inset-inline-start: 0;
+    width: @base-size * 4.5;
+    height: @base-size * 4.5;
+    border-radius: calc(calc(@base-size * 4.5) / 2);
+    transition: all 0.2s ease-in-out;
+    content: "";
+    background-color: @white-color;
+  }
+
+  &-inner {
+    display: block;
+    height: 100%;
+    overflow: hidden;
+    border-radius: 100px;
+    font-size: 12px;
+    padding-inline-start: 24px;
+    padding-inline-end: 9px;
+    transition: padding-inline-start 0.2s ease-in-out, padding-inline-end 0.2s ease-in-out;
+
+    &-checked, &-unChecked {
+      display: block;
+      pointer-events: none;
+      transition:  margin-inline-start .2s ease-in-out,  margin-inline-end .2s ease-in-out;
+      color: @white-color;
+    }
+    &-checked {
+      margin-inline-start: calc(-100% + calc(18px + 2px * 2) - calc(24px * 2));
+      margin-inline-end: calc(100% - calc(18px + 2px* 2) + calc(24px * 2));
+    }
+    &-unChecked {
+      margin-inline-start: 0;
+      margin-inline-end: 0;
+      margin-top: -22px;
+    }
+  }
+
+  &-small {
+    gap: @base-gap;
+  }
+
+  &-middle {
+    gap: @base-gap * 2;
+  }
+
+  &-large {
+    gap: @base-gap * 3;
+  }
+}

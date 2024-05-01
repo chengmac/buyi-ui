@@ -5,7 +5,6 @@ interface SpaceProps {
   itemClassName: string;
 }
 const SpaceItem: React.FC<SpaceProps> = ({ children, itemClassName }) => {
-  console.log(children);
   return <div className={itemClassName}>{children}</div>;
 };
 

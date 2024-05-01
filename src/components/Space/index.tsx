@@ -9,12 +9,13 @@ type SpaceAlign = (typeof baseAlign)[number];
 type SpaceDirection = (typeof baseDirection)[number];
 export type SpaceSize = (typeof baseSizes)[number] | number;
 
-interface SpaceProps {
+export interface SpaceProps {
   children: React.ReactNode;
   align?: SpaceAlign;
   direction?: SpaceDirection;
   size?: SpaceSize;
   wrap?: boolean;
+  style?: React.CSSProperties;
 }
 const Space: React.FC<SpaceProps> = ({
   children,
@@ -22,11 +23,14 @@ const Space: React.FC<SpaceProps> = ({
   direction = 'horizontal',
   size,
   wrap,
+  style,
 }) => {
   const { getPrefixCls } = useContext(ConfigContext);
   const prefix = getPrefixCls('space');
   const sizeCls = typeof size === 'string' && size;
-  const style = typeof size === 'number' ? { gap: size } : {};
+  const cssProperties =
+    typeof size === 'number' ? { ...style, gap: size } : style;
+
   const classList = classnames(prefix, {
     [`${prefix}-align-${align}`]: align,
     [`${prefix}-${direction}`]: direction,
@@ -44,7 +48,7 @@ const Space: React.FC<SpaceProps> = ({
   });
 
   return (
-    <div className={classList} style={style}>
+    <div className={classList} style={cssProperties}>
       {initItem}
     </div>
   );

@@ -1,14 +1,15 @@
 ---
 nav: 组件
 
-title: Space
+title: Space 间距
+group: 布局
 demo:
   cols: 2
 ---
 
 #### Space 间距
 
-用于设置组件相互之间的间距
+用于设置组件相互之间的间距, 多用于一行或者一列的排列布局。
 
 #### 代码演示
 

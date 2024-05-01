@@ -1,7 +1,9 @@
 ---
 nav: 组件
 
-title: Icon
+title: Icon 图标
+group: 常用
+groupOrder: 1
 demo:
   cols: 2
 ---
@@ -17,17 +19,27 @@ demo:
  * title: 基本用法
  * description:
  */
-import { Icon, Space } from 'buyi-ui';
+import { Grid, Icon, Space, Text } from 'buyi-ui';
 import React from 'react';
+import { CopyToClipboard } from 'react-copy-to-clipboard';
 import { supportIconList } from '../../constants';
 
 export default () => (
   <React.Fragment>
-    <Space wrap>
+    <Grid.Row gap={8} wrap align="middle">
       {supportIconList.map((type, index) => (
-        <Icon size="large" type={type} key={`icon-${index}`} />
+        <Grid.Col span={8} key={`icon-${index}`} className="buyi-icon-demo1">
+          <CopyToClipboard text={`<Icon type="${type}" />`}>
+            <div role="button">
+              <Space direction="vertical">
+                <Icon size="large" type={type} />
+                <Text ellipsis>{type}</Text>
+              </Space>
+            </div>
+          </CopyToClipboard>
+        </Grid.Col>
       ))}
-    </Space>
+    </Grid.Row>
   </React.Fragment>
 );
 ```

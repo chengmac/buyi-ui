@@ -11,32 +11,17 @@ A react library developed with dumi
 
 ## Usage
 
-TODO
-
-## Options
-
-TODO
-
-## Development
-
 ```bash
 # install dependencies
-$ yarn install
+$ npm install buyi-ui --save
+```
 
-# develop library by docs demo
-$ yarn start
+```jsx | tsx
+import React from 'react';
+import ReactDOM from 'react-dom';
+import { Button } from 'buyi-ui';
 
-# build library source code
-$ yarn run build
-
-# build library source code in watch mode
-$ yarn run build:watch
-
-# build docs
-$ yarn run docs:build
-
-# check your project for potential problems
-$ yarn run doctor
+ReactDOM.render(<Button>Button</Button>, document.getElementById('root'));
 ```
 
 ## LICENSE

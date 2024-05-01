@@ -1,0 +1,89 @@
+@import url('../../styles/variable.less');
+
+.@{default-prefix}-tabs {
+  width: 100%;
+  overflow: hidden;
+
+  &-bar {
+    margin-bottom: @base-size * 4;
+    border-bottom: 1px solid @gray-d9-color;
+    position: relative;
+    & ul {
+      width: 100%;
+      margin: 0px;
+      list-style: none;
+      padding-left: 0px;
+      display: flex;
+      justify-content: start;
+
+      & li {
+        cursor: pointer;
+      }
+    }
+
+    &-underline {
+      height: 2px;
+      background-color: @main-color;
+      position: absolute;
+      bottom: 1px;
+      left: 0;
+      transform-origin: 0 0;
+      -webkit-transform-origin: 0 0;
+      margin-bottom: -2px;
+      box-sizing: border-box;
+      width: 0;
+
+      &-animated {
+        transition: .3s cubic-bezier(.645,.045,.355,1), width .2s cubic-bezier(.645,.045,.355,1), left .3s cubic-bezier(.645,.045,.355,1), -webkit-transform .3s cubic-bezier(.645,.045,.355,1);
+      }
+    }
+  }
+  &-tab {
+    &-active {
+      color: @main-color;
+    }
+
+    &-disabled {
+      cursor: not-allowed !important;
+      color: @disabled-color;
+    }
+    &-item, &-middle {
+      font-size: 14px;
+      margin: 0 32px 0 0;
+      padding: @base-size * 3 @base-size * 4;
+    }
+
+    &-small {
+      font-size: 14px;
+      margin: 0 24px 0 0;
+      padding: @base-size * 2 @base-size * 3;
+    }
+    &-large {
+      font-size: 16px;
+      margin: 0 32px 0 0;
+      padding: @base-size * 3.5 @base-size * 4.5;
+    }
+
+    &-pane {
+      overflow: hidden;
+      opacity: 1;
+      transition: opacity .45s;
+      flex-shrink: 0;
+      width: 100%;
+
+      &-inactive {
+        overflow: hidden;
+        opacity: 0;
+        height: 0;
+      }
+    }
+  }
+  &-content {
+    display: flex;
+    flex-direction:row;
+    width: 100%;
+    -webkit-transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    transition: margin-left .3s cubic-bezier(.645,.045,.355,1);
+    will-change: margin-left;
+  }
+}

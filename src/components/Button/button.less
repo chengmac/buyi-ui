@@ -124,10 +124,27 @@
     background-color: rgba(0, 0, 0, 4%);
     box-shadow: none;
   }
+
+  :not(&:disabled):active::after {
+    box-shadow: 0 0 0 8px var(--primary-color);
+    opacity: 0;
+  }
+
+  &::after{
+    content: '';
+    position: absolute;
+    inset: 0;
+    border-radius: inherit;
+    opacity: 0.5;
+    transition: .2s;
+  }
 }
 @keyframes loading {
   100% {
     transform: rotate(360deg);
-    transform: rotate(360deg);
   }
+}
+
+:root{
+  --primary-color: @main-color;
 }
