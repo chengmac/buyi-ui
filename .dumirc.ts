@@ -5,7 +5,6 @@ export default defineConfig({
   outputPath: 'docs-dist',
   resolve: {
     atomDirs: [{ type: 'component', dir: 'src/components' }],
-    codeBlockMode: 'passive',
   },
   alias: {
     '~': '/src',

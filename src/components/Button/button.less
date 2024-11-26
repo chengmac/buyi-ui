@@ -16,7 +16,7 @@
   color: @black-color;
   height: 32px;
   padding: 4px 15px;
-  border-radius: 6px;
+  border-radius: 4px;
 
   &-default {
     .bg-and-border(@white-color, @gray-d9-color);
@@ -71,9 +71,6 @@
       padding: inherit;
       text-decoration: inherit;
       user-select: none;
-      user-select: none;
-      user-select: none;
-      user-select: none;
     }
   }
 
@@ -126,17 +123,17 @@
   }
 
   :not(&:disabled):active::after {
-    box-shadow: 0 0 0 8px var(--primary-color);
+    box-shadow: 0 0 0 10px var(--primary-color);
     opacity: 0;
   }
 
   &::after{
     content: '';
     position: absolute;
-    inset: 0;
+    inset: -1px;
     border-radius: inherit;
     opacity: 0.5;
-    transition: .2s;
+    transition: 0.4s;
   }
 }
 @keyframes loading {

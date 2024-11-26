@@ -1,0 +1,108 @@
+@import url('../../styles/variable.less');
+
+.@{default-prefix}-modal {
+  position: relative;
+  background-color: #fff;
+  background-clip: padding-box;
+  border: 0;
+  border-radius: 4px;
+  box-shadow: 0 3px 6px -4px #0000001f, 0 6px 16px #00000014, 0 9px 28px 8px #0000000d;
+  pointer-events: auto;
+  top: 100px;
+  max-width: calc(100vw - 32px);
+  margin: 0 auto;
+
+  &-wrap {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    transition: background 1s cubic-bezier(.075,.82,.165,1);
+  }
+
+  &-mask {
+    position: fixed;
+    inset: 0;
+    z-index: 1000;
+    background-color: rgba(0, 0, 0, 0.4);
+  }
+
+  &-content {
+    position: relative;
+  }
+
+  &-header, &-body, &-footer {
+    padding: @base-size * 4;
+  }
+
+  &-header {
+    
+  }
+
+  &-body {
+   
+  }
+
+  &-footer {
+    text-align: end;
+    .@{default-prefix}-btn + .@{default-prefix}-btn {
+      margin-left: 8px;
+    }
+  }
+
+  &-close {
+    color: @gray-d9-color;
+    width: 32px;
+    padding: 0px;
+    border: none;
+    &:hover {
+      color: @black-3-color;
+      border: none;
+    }
+  }
+
+ 
+
+  &-small {
+    width: @modal-small-size;
+  }
+
+  &-middle {
+    width:@modal-middle-size;
+  }
+
+  &-large {
+    width: @modal-large-size;
+  }
+
+  &-large {
+    width: @modal-x-large-size;
+  }
+
+  &-zoomIn {
+    animation: zoom-in 0.3s ease-in-out;
+  }
+
+  &-zoomOut {
+    animation: zoom-out 0.3s ease-in-out;
+  }
+}
+
+@keyframes zoom-in {
+  0% {
+    transform: scale(0.2);
+    opacity: 0;
+  }
+  100% {
+    transform: scale(1);
+    opacity: 1;
+  }
+}
+
+@keyframes zoom-out {
+  0% {
+    transform: scale(1);
+  }
+  100% {
+    transform: scale(0.2);
+  }
+}

@@ -1,6 +1,7 @@
 export { default as Button } from './components/Button';
 export { default as Grid } from './components/Grid';
 export { default as Icon } from './components/Icon';
+export { default as Modal } from './components/Modal';
 export { default as Radio } from './components/Radio';
 export { default as Space } from './components/Space';
 export { default as Switch } from './components/Switch';

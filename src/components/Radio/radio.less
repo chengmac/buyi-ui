@@ -19,8 +19,8 @@
     position: absolute;
     inset: 0;
     border-radius: inherit;
-    opacity: 0.5;
-    transition: 0.4s;
+    opacity: 0.2;
+    transition: all 0.3s;
   }
 
   &-checked &-inner::after {
@@ -56,6 +56,10 @@
 
   &-disabled {
     cursor: not-allowed;
+
+    &::after {
+      content: none;
+    }
   }
 
   &-disabled &-input {
