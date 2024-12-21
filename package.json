@@ -1,6 +1,6 @@
 {
   "name": "buyi-ui",
-  "version": "0.0.3",
+  "version": "0.0.4",
   "description": "A react library developed with dumi",
   "keywords": [
     "buyi-ui",
@@ -52,6 +52,7 @@
   },
   "dependencies": {
     "classnames": "^2.3.2",
+    "react-copy-to-clipboard": "^5.1.0",
     "styled-components": "^6.1.13"
   },
   "devDependencies": {
