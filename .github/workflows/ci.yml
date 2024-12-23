@@ -23,6 +23,7 @@ jobs:
       - name: Build Project
         run: |
           npm install
+          npm i @swc/core
           npm run docs:build
 
       - name: Deploy to Github
