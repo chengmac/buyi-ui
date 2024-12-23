@@ -8,7 +8,7 @@ on:
 # 工作流
 jobs:
   build-and-deploy:
-    runs-on: macOS-11.6 # 运行环境
+    runs-on: ubuntu-latest # 运行环境
 
     steps:
       # 拉代码
@@ -18,11 +18,11 @@ jobs:
       - name: Use Node.js
         uses: actions/setup-node@v4
         with:
-          node-version: 20.x
+          node-version: 16.x
 
       - name: Build Project
         run: |
-          npm install      
+          npm install
           npm run docs:build
 
       - name: Deploy to Github
