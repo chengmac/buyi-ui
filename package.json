@@ -1,6 +1,6 @@
 {
   "name": "buyi-ui",
-  "version": "0.0.4",
+  "version": "0.0.6",
   "description": "A react library developed with dumi",
   "keywords": [
     "buyi-ui",
@@ -13,8 +13,8 @@
     "url": "https://github.com/chengmac/buyi-ui.git"
   },
   "license": "MIT",
-  "module": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "module": "./dist/lib/index.js",
+  "types": "./dist/lib/index.d.ts",
   "files": [
     "dist"
   ],
@@ -30,6 +30,7 @@
     "lint:es": "eslint \"{src,test}/**/*.{js,jsx,ts,tsx}\"",
     "prepare": "husky install && dumi setup",
     "prepublishOnly": "father doctor && npm run build",
+    "publish": "node scripts/updateVersion.js",
     "start": "npm run dev"
   },
   "commitlint": {
